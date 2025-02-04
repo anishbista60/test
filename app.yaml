@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: role-demo
+  namespace: argocd
+
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  project: default  # Set the project to 'default'
+  source:
+    path: developer-role
+    repoURL: https://github.com/anishbista60/test.git
+    targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true  # Allow Argo CD to create the namespace

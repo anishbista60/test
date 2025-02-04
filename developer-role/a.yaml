@@ -24,3 +24,7 @@ subjects:
   - kind: User
     name: bpradipta
     apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: view-all-dev-cluster
+  apiGroup: rbac.authorization.k8s.io

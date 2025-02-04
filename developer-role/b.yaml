@@ -33,3 +33,7 @@ subjects:
   - kind: User
     name: bpradipta
     apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-manager-role
+  apiGroup: rbac.authorization.k8s.io
